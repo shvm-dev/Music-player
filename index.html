@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="icons/logo.jpg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="equalizer-bar/equalizer-bar.css" />
+    <title>Music player</title>
+  </head>
+  <body>
+    <main>
+       <div id="bg"></div>
+        <div class="glow"></div>
+      <div class="music-album">
+        <div id="music-card">
+          <div class="album-cover" id="album-cover"></div>
+          <h1 id="song-name"></h1>
+          <h3 id="artist-name"></h3>
+          <div id="music-play-animation">
+            <div class="equalizer-bar" id="block-1"></div>
+            <div class="equalizer-bar" id="block-2"></div>
+            <div class="equalizer-bar" id="block-3"></div>
+            <div class="equalizer-bar" id="block-4"></div>
+            <div class="equalizer-bar" id="block-5"></div>
+            <div class="equalizer-bar" id="block-6"></div>
+            <div class="equalizer-bar" id="block-7"></div>
+            <div class="equalizer-bar" id="block-8"></div>
+            <div class="equalizer-bar" id="block-1"></div>
+            <div class="equalizer-bar" id="block-2"></div>
+            <div class="equalizer-bar" id="block-3"></div>
+            <div class="equalizer-bar" id="block-4"></div>
+            <div class="equalizer-bar" id="block-5"></div>
+            <div class="equalizer-bar" id="block-6"></div>
+            <div class="equalizer-bar" id="block-7"></div>
+            <div class="equalizer-bar" id="block-8"></div>
+            <div class="equalizer-bar" id="block-1"></div>
+            <div class="equalizer-bar" id="block-2"></div>
+            <div class="equalizer-bar" id="block-3"></div>
+            <div class="equalizer-bar" id="block-4"></div>
+            <div class="equalizer-bar" id="block-5"></div>
+            <div class="equalizer-bar" id="block-6"></div>
+            <div class="equalizer-bar" id="block-7"></div>
+            <div class="equalizer-bar" id="block-8"></div>
+            <div class="equalizer-bar" id="block-6"></div>
+            <div class="equalizer-bar" id="block-7"></div>
+            <div class="equalizer-bar" id="block-8"></div>
+          </div>
+
+          <div class="song-controls">
+            <input type="range" id="song-duration"/>
+            <div id="song-duration-time">
+              <span id="song-start"></span>
+              <span id="song-end"></span>
+            </div>
+            <div class="song-control-btns">
+              <button id="previous-btn">
+                <img
+                  src="icons/previous-icon.png"
+                  alt="previous-btn-icon"
+                  id="previous-btn-icon"
+                />
+              </button>
+
+              <button id="play-btn">
+                <img src="" alt="play-btn-icon" id="play-btn-icon" />
+              </button>
+              <button id="next-btn">
+                <img
+                  src="icons/next.png"
+                  alt="next-btn-icon"
+                  id="next-btn-icon"
+                />
+              </button>
+            </div>
+            <input
+              type="range"
+              id="volume-progress"
+              min="0"
+              max="1"
+              step="0.01"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="lyrics-wrapper">
+          <div id="lyrics-container">
+  
+          </div>
+        </div>
+      </div>
+      <audio id="music-audio" src=""></audio>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

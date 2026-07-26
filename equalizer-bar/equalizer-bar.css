@@ -1,0 +1,117 @@
+#music-play-animation {
+  /* width: 300px; */
+  height: 70px;
+  overflow-y: hidden;
+  /* display: flex; */
+  /* align-items: end; */
+
+  margin-top: 10px;
+     display:flex;
+    align-items:center;
+    gap:4px;
+}
+.equalizer-bar{
+    /* width: 8px; */
+    /* background: #53B2D2; */
+    margin: 0 2px;
+    /* transform-origin: bottom; */
+    /* animation: equalizer var(--speed) ease-in-out infinite; */
+    animation-play-state: paused;
+
+
+  width:3px;
+    border-radius:50px;
+    background:#53B2D2;
+    animation: equalizer 1.8s ease-in-out infinite;
+}
+
+/* Song play hone par animation chale */
+
+#music-play-animation.playing .equalizer-bar{
+    animation-play-state: running;
+}
+
+#music-play-animation.paused .equalizer-bar{
+    animation-play-state: paused;
+}
+
+
+/* Equalizer Animation */
+@keyframes equalizer{
+
+    0%{
+        transform: scaleY(.7);
+    }
+
+    15%{
+        transform: scaleY(1);
+    }
+
+    30%{
+        transform: scaleY(.8);
+    }
+
+    45%{
+        transform: scaleY(1.15);
+    }
+
+    60%{
+        transform: scaleY(.9);
+    }
+
+    75%{
+        transform: scaleY(1.25);
+    }
+
+    100%{
+        transform: scaleY(.75);
+    }
+
+}
+#block-1{
+    height:30px;
+    --speed:1.6s;
+    animation-delay:.0s;
+}
+
+#block-2{
+    height:52px;
+    --speed:2.2s;
+    animation-delay:.1s;
+}
+
+#block-3{
+    height:68px;
+    --speed:1.8s;
+    animation-delay:.2s;
+}
+
+#block-4{
+    height:70px;
+    --speed:2.5s;
+    animation-delay:.3s;
+}
+
+#block-5{
+    height:38px;
+    --speed:1.9s;
+    animation-delay:.4s;
+}
+
+#block-6{
+    height:62px;
+    --speed:2.3s;
+    animation-delay:.1s;
+}
+
+#block-7{
+    height:34px;
+    --speed:1.7s;
+    animation-delay:.0s;
+}
+
+#block-8{
+    height:58px;
+    --speed:2.1s;
+    animation-delay:.3s;
+}
