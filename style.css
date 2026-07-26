@@ -526,3 +526,13 @@ overflow: hidden;
     font-size: 20px;
   }
 }
+
+button,
+button:focus,
+button:focus-visible,
+input[type="range"],
+input[type="range"]:focus,
+input[type="range"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
