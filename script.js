@@ -458,15 +458,24 @@ volumeProgress.addEventListener("input", () => {
   musicAudio.volume = volumeProgress.value;
 });
 
-musicAudio.addEventListener("timeupdate", () => {
-  let currentTime = musicAudio.currentTime;
-  let inMin = Math.floor(currentTime / 60);
-  let inSec = Math.floor(currentTime % 60);
+musicAudio.addEventListener("loadedmetadata", () => {
 
-  songStart.innerText = `${inMin}:${inSec}`;
-  songEnd.innerText = `${Math.floor(musicAudio.duration / 60)}:${Math.floor(musicAudio.duration % 60)}`;
+  let min = Math.floor(musicAudio.duration / 60);
+  let sec = Math.floor(musicAudio.duration % 60);
+
+  songEnd.innerText =
+    `${min}:${String(sec).padStart(2, "0")}`;
+
 });
+musicAudio.addEventListener("timeupdate", () => {
 
+  let min = Math.floor(musicAudio.currentTime / 60);
+  let sec = Math.floor(musicAudio.currentTime % 60);
+
+  songStart.innerText =
+    `${min}:${String(sec).padStart(2, "0")}`;
+
+});
 function createLyrics() {
   lyricsContainer.innerHTML = "";
 
@@ -549,6 +558,11 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-
-console.log(previousBtn);
-console.log(previousBtn);
+document.addEventListener(
+  "touchstart",
+  () => {
+    musicAudio.play();
+    updateUI();
+  },
+  { once: true }
+);
