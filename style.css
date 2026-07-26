@@ -23,9 +23,6 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Left: Player | Right: Lyrics */
   position: relative;
-  overflow: hidden;
-  /* background-image: url(covers/suniya\ suniya.jpg); */
-  /* background-image: url("songs/Suniyan\ Suniyan.mp3"); */
 }
 
 /* ------------------ Blurred Background ------------------ */
