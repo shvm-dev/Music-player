@@ -405,15 +405,12 @@ musicAudio.addEventListener("timeupdate", function () {
 });
 
 // --------> Update current playback time on progress bar click
-songDuration.addEventListener("click", function (e) {
-  let clickedInfo = songDuration.getBoundingClientRect();
-  let clickX = e.clientX - clickedInfo.left;
-  let percentage = clickX / clickedInfo.width;
-  let seekTime = percentage * musicAudio.duration;
-  musicAudio.currentTime = seekTime;
+songDuration.addEventListener("input", () => {
+  if (!musicAudio.duration) return;
 
-  musicAudio.play();
-  updateUI();
+  musicAudio.currentTime =
+    (songDuration.value / 100) * musicAudio.duration;
+
   updateActiveLyric();
 });
 
@@ -495,15 +492,21 @@ function updateActiveLyric() {
     p.classList.remove("active");
   });
 
-  if (activeIndex !== -1) {
-    const activeLine = lyricsContainer.children[activeIndex];
+ if (activeIndex !== -1) {
+const activeLine = lyricsContainer.children[activeIndex];
 
-    activeLine.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-    lyricsContainer.children[activeIndex].classList.add("active");
-  }
+const top =
+  activeLine.offsetTop -
+  lyricsContainer.clientHeight / 2 +
+  activeLine.clientHeight / 2;
+
+lyricsContainer.scrollTo({
+  top,
+  behavior: "smooth",
+});
+
+activeLine.classList.add("active");
+}
 }
 
 musicAudio.addEventListener("timeupdate", () => {
